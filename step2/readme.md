@@ -29,7 +29,7 @@ html 에서 for문 돌 때
 
 
 
-![image](/Users/PJS/Desktop/github/java/project/will-web/step2/2.png)
+![image](./2.png)
 
 
 
