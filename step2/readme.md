@@ -29,7 +29,7 @@ html 에서 for문 돌 때
 
 
 
-![image](./2.png)
+![image2](./2.PNG)
 
 
 
