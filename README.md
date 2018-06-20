@@ -2,13 +2,6 @@
 
 ------
 
-- [step1](./step1)
+- [part1](./part1)
 
-  
-
-- [step2](./step2)
-
-  
-
-- [step3](./step3)
 
