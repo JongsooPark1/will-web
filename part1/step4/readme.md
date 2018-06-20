@@ -42,7 +42,7 @@
 - System.out.println 출력하던 클래스에서 다음 추가하고
 
   ```
-  private static final Logger logger = LoggerFactory.getLogger(QuestionController.class);
+  private static final Logger logger = LoggerFactory.getLogger(클래스이름.class);
   ```
 
   System.out.println대신 사용하기
