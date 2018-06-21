@@ -1,13 +1,18 @@
-## java - qna
+## java - qna - 반복주기1
 
 ------
 
-- [part1](./part1)
+- [step1](./step1)
+
+  
+
+- [step2](./step2)
+
+  
+
+- [step3](./step3)
 
 
 
-
-* [part2](./part2)
-
-
+* [step4](./step4)
 
