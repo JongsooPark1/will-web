@@ -1,6 +1,7 @@
 ## step2 - DB 없이 기능 구현
 
 
+
 서버에 요청할 때 아무것도 작성하지 않으면 get방식 -> url에 data노출
 
 -> form 태그에 method = “post”라고 하면 post방식, controller에도 @PostMapping으로 변경 -> url에 data노출x
@@ -24,6 +25,12 @@ html 에서 for문 돌 때
 {{#users}} ~ {{/users}}
 
 html에서 주소입력 할 때 "" 따옴포 내부 맨 처음에 / 꼭 붙인다
+
+
+
+#### 순서
+
+html에서 링크 걸려 있는 곳 클릭 -> controller에서 해당 url을 mapping하고 있는 메소드 실행 -> 메소드에서 resource 또는 redirect:/~를 return
 
 
 
