@@ -79,4 +79,21 @@ index.html에서 아래와 같이 사용
   	<input type="hidden" name="_method" value="DELETE"/>
   ```
 
-  
+
+
+### @Lob
+
+contetns와 같이 내용이 많은 경우. string의 경우 DB에서 default는 255자
+
+
+
+####  @OrderBy("id ASC")
+
+데이터를 OneToMany 매핑을 할 때, 매핑된 데이터를 id기준으로 오름차순으로 정렬
+
+```java
+@OneToMany(mappedBy="question")
+@OrderBy("id ASC")
+private List<Answers> answers;
+```
+
