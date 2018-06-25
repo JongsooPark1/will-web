@@ -97,3 +97,27 @@ contetns와 같이 내용이 많은 경우. string의 경우 DB에서 default는
 private List<Answers> answers;
 ```
 
+
+
+### default 생성자
+
+DB 사용할 때, JPA에서 처음 읽어 들일 때 default생성자 필요하다
+
+```java
+public class ClassForQAndA {
+	@ManyToOne
+	protected User writer;
+	
+	public ClassForQAndA() {
+		
+	}
+	
+	public ClassForQAndA(User writer) {
+        super();		// 없어도 자동으로 생성한다
+		this.writer = writer;
+	}
+}
+```
+
+
+
