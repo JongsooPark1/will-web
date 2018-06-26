@@ -1,6 +1,6 @@
-## java - qna - 반복주기1
+## java - qna
 
-------
+
 
 - [step1](./step1)
 
@@ -16,3 +16,10 @@
 
 * [step4](./step4)
 
+
+
+* [step5](./step5)
+
+
+
+* [step6](./step6)
