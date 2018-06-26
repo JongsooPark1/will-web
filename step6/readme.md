@@ -88,3 +88,20 @@ xml 의 설계 목표인 단순성, 일바성, 인터넷을 통한 사용 가능
 #### XHR 로 가져올 수 있는 데이터 형태
 
 - XML 과 JSON 형태로 나누어지며, 최근에는 **주로 JSON형태를 선호함**
+
+
+
+
+
+사용자가 버튼을 눌렀을 때, 바로 서버로 데이터가 전송되지 않게 하기 위해 버튼에 클릭 이벤트 핸들러 등록
+
+
+
+* scripts.js
+
+```javascript
+$(".answer-write input[type=submit]").click(addAnswer);
+```
+
+
+
