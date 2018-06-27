@@ -4,6 +4,8 @@
 
 ## 왜 Ajax 를 쓰는가
 
+개발비용은 더 들지만 최근 많은 라이브러리 나와 있다
+
 
 
 **왜 Ajax 를 쓰는가?**
@@ -93,15 +95,134 @@ xml 의 설계 목표인 단순성, 일바성, 인터넷을 통한 사용 가능
 
 
 
-사용자가 버튼을 눌렀을 때, 바로 서버로 데이터가 전송되지 않게 하기 위해 버튼에 클릭 이벤트 핸들러 등록
+### AJAX로 답변 추가 기능 구현
 
-
+사용자가 버튼을 눌렀을 때, 바로 서버로 데이터가 전송되지 않게 하기 위해 버튼에 클릭 이벤트 핸들러 등록하고 json 데이터 전송
 
 * scripts.js
 
-```javascript
-$(".answer-write input[type=submit]").click(addAnswer);
-```
+  #### 1. 버튼에 클릭 이벤트 핸들러 등록
+
+  ```javascript
+  $(".answer-write input[type=submit]").click(addAnswer);
+  ```
+
+  #### 2. 서버로 보낼 form 데이터 묶기
+
+  ```javascript
+  function addAnswer(e) {
+      e.preventDefault(); //submit 이 자동으로 동작하는 것을 막는다.
+  
+      var queryString = $(".answer-write").serialize(); //form data들을 자동으로 묶어준다.
+      console.log("query : "+ queryString);
+  }
+  ```
+
+  #### 3. 서버로 데이터를 전송
+
+  ```javascript
+  function addAnswer(e) {
+      e.preventDefault();
+  
+      var queryString = $("form[name=answer]").serialize();
+  
+      var url = $(".answer-write").attr("action");
+      console.log("url : " + url);
+  
+      $.ajax({
+          type : 'post',
+          url : url,
+          data : queryString,
+          dataType : 'json',
+          error: onError,
+          success : onSuccess,
+      });
+  }
+  ```
+
+  #### 4. 서버에서 데이터 처리 및 JSON 응답 (java)
+
+  ```java
+  @RestController	//json 데이터 처리 하기 위해선 @Controller 아니다
+  @RequestMapping("/api/questions/{questionId}/answers")
+  public class ApiAnswerController {
+      @Autowired
+      private QuestionRepository questionRepository;
+  
+      @Autowired
+      private AnswerRepository answerRepository;
+  
+      @PostMapping("")
+      public Answer create(@PathVariable Long questionId, String contents, HttpSession session) {
+          if (!HttpSessionUtils.isLoginUser(session)) {
+              return null;
+          }
+  
+          User loginUser = HttpSessionUtils.getUserFromSession(session);
+          Question question = questionRepository.findOne(questionId);
+          Answer answer = new Answer(loginUser, question, contents);
+          return answerRepository.save(answer);
+      }
+  }
+  ```
+
+  #### 5. 클라이언트(크롬)에서 JSON 응답 확인
+
+  ```javascript
+  function addAnswer(e) {
+      e.preventDefault();
+  
+      var queryString = $("form[name=answer]").serialize();
+  
+      var url = $(".answer-write").attr("action");
+      console.log("url : " + url);
+  
+      $.ajax({
+          type : 'post',
+          url : url,
+          data : queryString,
+          dataType : 'json',
+          error: function () {
+              console.log('failure');
+          },
+          success : function (data, status) {
+              console.log(data);
+          }
+      });
+  }
+  ```
+
+  #### 6. 클라이언트에서 JSON 데이터 처리
+
+  - 서버에서 받은 JSON 데이터를 활용해 동적으로 html을 생성해야 한다.
+
+  ```javascript
+      $.ajax({
+          type : 'post',
+          url : url,
+          data : queryString,
+          dataType : 'json',
+          error: function () {
+              alert("error");
+          },
+          success : function (data, status) {
+              console.log(data);
+              var answerTemplate = $("#answerTemplate").html();
+              var template = answerTemplate.format(data.writer.userId, data.formattedCreateDate, data.contents, data.question.id, data.id);
+              $(".qna-comment-slipp-articles").prepend(template);            
+              $("textarea[name=contents]").val("");
+          }
+      });
+  ```
 
 
 
+
+
+
+
+
+
+@JsonProperty : getter 메소드 없어도 json 데이터 가져올 수 있다
+
+Question class에서 answers에 @JsonProperty안하니까 500error 뜨던데?
