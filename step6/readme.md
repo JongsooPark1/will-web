@@ -226,3 +226,10 @@ xml 의 설계 목표인 단순성, 일바성, 인터넷을 통한 사용 가능
 @JsonProperty : getter 메소드 없어도 json 데이터 가져올 수 있다
 
 Question class에서 answers에 @JsonProperty안하니까 500error 뜨던데?
+
+
+
+
+
+
+
