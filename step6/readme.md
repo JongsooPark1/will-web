@@ -105,6 +105,7 @@ xml 의 설계 목표인 단순성, 일바성, 인터넷을 통한 사용 가능
 
   ```javascript
   $(".answer-write input[type=submit]").click(addAnswer);
+  // answer-write의 input type=submit인 곳에 클릭 이벤트를 달겠다
   ```
 
   #### 2. 서버로 보낼 form 데이터 묶기
@@ -217,19 +218,14 @@ xml 의 설계 목표인 단순성, 일바성, 인터넷을 통한 사용 가능
 
 
 
+@MappedSuperClass : JPA에서 superClass 기능 사용 할 때
+
+@EnableJpaAuditing : 
+
+답변 삭제 할 때, 새로고침한 다음에만 작동하는 이유는?
 
 
 
+(strategy = GenerationType.IDENTITY) 
 
-
-
-@JsonProperty : getter 메소드 없어도 json 데이터 가져올 수 있다
-
-Question class에서 answers에 @JsonProperty안하니까 500error 뜨던데?
-
-
-
-
-
-
-
+(foreignKey = @ForeignKey(name = "fk_answer_question")) 
