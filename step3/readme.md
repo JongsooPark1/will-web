@@ -151,3 +151,63 @@ application.properties에서 아래의 코드를 추가한다
 spring.mustache.expose-session-attributes=true
 ```
 
+
+
+### JWP 반복주기 파트 1 - 셀프 체크리스트
+
+
+
+* spring boot로 로컬 개발 환경을 세팅할 수 있는가?
+
+
+
+* mustache, handlebars와 같은 template engine의 역할을 이해했는가?
+
+
+
+* MVC 패턴에서 model view controller 각각의 역할을 이해했는가?
+
+
+
+* 웹 클라이언트에서 웹 서버에 요청을 보내고, 응답을 받는 흐름을 이해했는가?
+
+
+
+* Spring MVC 기반으로 CRUD 기본 기능을 구현할 수 있는가?
+
+
+
+* javabean 표준에 대해 알고 있는가?
+
+
+
+* 개발한 소스 코드를 AWS와 같은 원격 서버에 배포할 수 있는가?
+
+
+
+* 쉘 스크립트 역할에 대해 이해했는가?
+
+
+
+* ORM의 역할에 대해 이해했는가?
+
+
+
+* ORM 기반으로 CRUD 기능을 구현할 수 있는가?
+
+
+
+* Logging 라이브러리 필요성을 이해했는가?
+
+
+
+* Logging 라이브러리를 설정할 수 있는가?
+
+
+
+* MVC 패턴에 대해 설명하고, model view controller 각각의 역할에 대해 설명하시오
+
+
+
+* 웹 클라이언트에서 요청을 보내고, 웹 서버에서 응답을 받기까지의 과정에 대해 최대한 구체적으로 설명하시오
+

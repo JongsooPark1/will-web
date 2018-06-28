@@ -218,14 +218,96 @@ xml 의 설계 목표인 단순성, 일바성, 인터넷을 통한 사용 가능
 
 
 
+
+
+### Swagger
+
+Json API를 문서화 하고, 바로 테스트 하기 위함
+
+* MyApplication.java
+
+  @Swagger2 추가
+
+  ```java
+  @Swagger2
+  public class MyApplication {
+      
+  }
+  ```
+
+http://springboot.tistory.com/23
+
+localhost:8080/swagger-ui.html에서 확인
+
+
+
 @MappedSuperClass : JPA에서 superClass 기능 사용 할 때
 
-@EnableJpaAuditing : 
+
 
 답변 삭제 할 때, 새로고침한 다음에만 작동하는 이유는?
 
 
 
-(strategy = GenerationType.IDENTITY) 
 
-(foreignKey = @ForeignKey(name = "fk_answer_question")) 
+
+### JWP 반복주기 파트 2 - 셀프 체크리스트
+
+* HTTP는 무상태 프로토콜이라는 말의 의미를 이해했는가?
+
+  
+
+* HTTP는 상태를 유지하기 위해 cookie를 사용한다. cookie의 동작 방식을 이해했는가?
+
+  
+
+* cookie와 session의 차이점은 무엇인지 이해했는가?
+
+  
+
+* Spring MVC에서 Session을 활용해 로그인 기반 개발이 가능한가?
+
+  
+
+* ORM과 JPA의 관계, JPA와 Hibernate의 관계에 대해 이해했는가?
+
+  
+
+* JPA 기반으로 자바 객체와 테이블 매핑이 가능한가?
+
+  
+
+* JPA 매핑에서 fetchtype으로 Eager, Lazy가 있다. 이 둘의 차이점을 이해했는가?
+
+  
+
+* AJAX가 필요성을 이해하고 있는가?
+
+  
+
+* 웹 서버에서 HTML과 JSON으로 응답할 때의 차이점을 이해했는가?
+
+  
+
+* 서버에서 JSON으로 응답하고, 클라이언트에서 AJAX로 기능을 구현하는 것이 가능한가?
+
+  
+
+* 웹 백엔드와 모바일 백엔드가 같다는 말의 의미를 이해했는가?
+
+  
+
+* Maven, Gradle과 같은 빌드 도구의 역할에 대해 이해했는가?
+
+  
+
+* Cookie와 Session의 차이점에 대해 설명하시오. 
+
+  
+
+* 이번 미션에서 공부한 주제 중에서 학습하기 가장 어려웠던 것은 어떤 것인가요? 
+
+  
+
+* 그 외에 학습하기 어렵거나 시간이 오래 걸린 것은 무엇이고, 어떻게 극복했나요? 
+
