@@ -281,7 +281,7 @@ localhost:8080/swagger-ui.html에서 확인
 
   
 
-* AJAX가 필요성을 이해하고 있는가?
+* AJAX의 필요성을 이해하고 있는가?
 
   
 
@@ -300,6 +300,18 @@ localhost:8080/swagger-ui.html에서 확인
 * Maven, Gradle과 같은 빌드 도구의 역할에 대해 이해했는가?
 
   
+
+  의존성이 있는 라이브러리 관리 방법
+
+  
+
+  pom.xml에서 dependency추가하면 자동으로 필요한 jar파일을 원격(ex. Maven Central Repository)에서 가져와 로컬PC에 저장하고 이전의 버젼을 삭제하기 때문에 따로 작업할 필요 없다
+
+
+
+​	저장된 jar파일과 필수적으로 의존 관계가 있는 다른 jar파일(라이브러리) 역시 동시에 로컬에 저장된다(의존성 전이)
+
+
 
 * Cookie와 Session의 차이점에 대해 설명하시오. 
 
